@@ -41,7 +41,7 @@ async function loadCounter() {
   }
 }
 const MAX_CONCURRENT_SCANS = 2;
-const SCAN_TIMEOUT_MS = 30000; // 30 seconds
+const SCAN_TIMEOUT_MS = 80000; // 80 seconds
 let runningScans = 0;
 
 async function saveScan(scan) {
@@ -111,11 +111,11 @@ app.post("/api/scans", scanLimiter, (req, res) => {
         saveScan(scans[scan_id]);
       }
     })
-    .catch(() => {
+      .catch((err) => {
       if (scans[scan_id].status === "running") {
         clearTimeout(timer);
         scans[scan_id].status = "failed";
-        scans[scan_id].error = "Scanner failed.";
+        scans[scan_id].error = err.message;
         runningScans--;
         saveScan(scans[scan_id]);
       }

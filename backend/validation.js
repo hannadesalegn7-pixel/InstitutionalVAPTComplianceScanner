@@ -1,7 +1,8 @@
 const net = require("net");
 
 // Approved lab subnets (you decide the scope)
-const ALLOWED_SUBNETS = ["192.168.1.0/24"];
+const ALLOWED_SUBNETS = ["192.168.1.0/24", "127.0.0.1/32"];
+
 
 function ipToInt(ip) {
   return ip.split(".").reduce((acc, octet) => (acc << 8) + Number(octet), 0) >>> 0;
