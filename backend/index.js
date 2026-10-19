@@ -123,7 +123,18 @@ app.post("/api/scans", scanLimiter, (req, res) => {
 
   res.status(202).json({ scan_id, target, status: "running" });
 });
-
+app.get("/api/scans", async (req, res) => {
+  try {
+    const r = await pool.query(
+      "SELECT id, target, status, started_at, completed_at, error_message FROM scans ORDER BY started_at DESC LIMIT 50"
+    );
+    res.json(r.rows);
+  } catch (e) {
+    res.status(500).json({
+      error: { code: "SERVER_ERROR", message: "Could not load scan history." },
+    });
+  }
+});
 app.get("/api/scans/:id", (req, res) => {
   const scan = scans[req.params.id];
   if (!scan) {
