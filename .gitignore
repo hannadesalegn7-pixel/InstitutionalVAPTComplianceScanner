@@ -29,3 +29,4 @@ Initial development.
 
 ## Security Notice
 This application is intended for authorized security testing only. Always obtain permission before scanning a website or network.
+__pycache__/
