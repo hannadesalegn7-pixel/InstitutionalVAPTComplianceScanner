@@ -1,0 +1,121 @@
+[
+  {
+    "rule_id": "R-001",
+    "name": "Telnet service exposed",
+    "description": "Telnet sends credentials and data without encryption.",
+    "detection_criteria": { "port": 23, "protocol": "tcp", "state": "open" },
+    "severity": "high",
+    "evidence_required": "Scanner reports 23/tcp open with service telnet",
+    "cannot_prove": "That credentials are weak or the service is exploitable",
+    "recommendation": "Disable Telnet and use SSH with key-based authentication.",
+    "default_confidence": "observed"
+  },
+  {
+    "rule_id": "R-002",
+    "name": "FTP service exposed",
+    "description": "FTP commonly transmits credentials without encryption.",
+    "detection_criteria": { "port": 21, "protocol": "tcp", "state": "open" },
+    "severity": "medium",
+    "evidence_required": "Scanner reports 21/tcp open with service ftp",
+    "cannot_prove": "That anonymous login is enabled or that data is exposed",
+    "recommendation": "Replace FTP with SFTP or FTPS, or restrict access.",
+    "default_confidence": "observed"
+  },
+  {
+    "rule_id": "R-003",
+    "name": "HTTP service without observed HTTPS",
+    "description": "Unencrypted web traffic may expose data in transit.",
+    "detection_criteria": { "port": 80, "protocol": "tcp", "state": "open" },
+    "severity": "low",
+    "evidence_required": "Scanner reports 80/tcp open with service http",
+    "cannot_prove": "That sensitive data is actually transmitted over HTTP",
+    "recommendation": "Verify whether HTTP is required; redirect to HTTPS where possible.",
+    "default_confidence": "observed"
+  },
+  {
+    "rule_id": "R-004",
+    "name": "SMB service exposed",
+    "description": "SMB file sharing is reachable on the network.",
+    "detection_criteria": { "port": 445, "protocol": "tcp", "state": "open" },
+    "severity": "medium",
+    "evidence_required": "Scanner reports 445/tcp open",
+    "cannot_prove": "That the SMB version is vulnerable or that shares are open",
+    "recommendation": "Restrict SMB to required hosts and confirm systems are patched.",
+    "default_confidence": "observed"
+  },
+  {
+    "rule_id": "R-005",
+    "name": "RDP service exposed",
+    "description": "Remote Desktop is reachable on the network.",
+    "detection_criteria": { "port": 3389, "protocol": "tcp", "state": "open" },
+    "severity": "medium",
+    "evidence_required": "Scanner reports 3389/tcp open",
+    "cannot_prove": "That authentication is weak or the host is compromised",
+    "recommendation": "Restrict RDP access, require strong authentication, avoid direct exposure.",
+    "default_confidence": "observed"
+  },
+  {
+    "rule_id": "R-006",
+    "name": "SSH service detected",
+    "description": "SSH is an encrypted remote-access service.",
+    "detection_criteria": { "port": 22, "protocol": "tcp", "state": "open" },
+    "severity": "informational",
+    "evidence_required": "Scanner reports 22/tcp open with service ssh",
+    "cannot_prove": "That the SSH configuration is secure or insecure",
+    "recommendation": "Confirm SSH is required and limit access to authorized users.",
+    "default_confidence": "observed"
+  },
+  {
+    "rule_id": "R-007",
+    "name": "Database service port exposed",
+    "description": "A database port is reachable from the scanned network position.",
+    "detection_criteria": { "ports": [3306, 5432, 1433, 1521, 27017], "protocol": "tcp", "state": "open" },
+    "severity": "medium",
+    "evidence_required": "Scanner reports a common database port open",
+    "cannot_prove": "That the database is unauthenticated or contains sensitive data",
+    "recommendation": "Restrict database access to application hosts only; use firewall rules.",
+    "default_confidence": "observed"
+  },
+  {
+    "rule_id": "R-008",
+    "name": "Legacy r-service exposed (rexec/rlogin/rsh)",
+    "description": "Legacy remote-shell services use weak or no encryption.",
+    "detection_criteria": { "ports": [512, 513, 514], "protocol": "tcp", "state": "open" },
+    "severity": "high",
+    "evidence_required": "Scanner reports 512, 513 or 514/tcp open",
+    "cannot_prove": "That the service accepts trusted-host logins or is exploitable",
+    "recommendation": "Disable legacy r-services and use SSH instead.",
+    "default_confidence": "observed"
+  },
+  {
+    "rule_id": "R-009",
+    "name": "Service on unexpected port",
+    "description": "A known service type was seen on a non-standard port.",
+    "detection_criteria": {
+      "match": "service_on_unexpected_port",
+      "expected": {
+        "ssh": [22],
+        "http": [80, 8080, 443, 8443],
+        "https": [443, 8443],
+        "ftp": [21],
+        "telnet": [23]
+      }
+    },
+    "severity": "informational",
+    "evidence_required": "Scanner identifies a known service on a non-standard port",
+    "cannot_prove": "That the placement is unauthorized or malicious",
+    "recommendation": "Confirm with the system owner that this service and port are intended.",
+    "default_confidence": "needs_manual_review"
+  },
+  {
+    "rule_id": "R-010",
+    "name": "Service version banner detected",
+    "description": "A version string was observed; patch status cannot be judged from the scan alone.",
+    "detection_criteria": { "match": "version_present" },
+    "severity": "informational",
+    "evidence_required": "Scanner reports a service version string",
+    "cannot_prove": "That the version is outdated or vulnerable",
+    "recommendation": "Compare the version with vendor advisories and confirm patch level manually.",
+    "default_confidence": "needs_manual_review"
+  }
+]

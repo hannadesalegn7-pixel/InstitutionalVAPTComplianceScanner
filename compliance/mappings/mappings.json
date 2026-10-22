@@ -1,0 +1,22 @@
+[
+  { "rule_id": "R-001", "control_id": "C-001", "mapping_rationale": "Telnet is a remote-access protocol; remote access should be controlled and protected.", "verification_status": "verified" },
+  { "rule_id": "R-001", "control_id": "C-004", "mapping_rationale": "Telnet does not protect data in transit.", "verification_status": "needs_manual_review" },
+  { "rule_id": "R-001", "control_id": "C-007", "mapping_rationale": "May be relevant to personal-data security measures if personal data is processed on this system; cannot be concluded from a scan alone.", "verification_status": "needs_manual_review" },
+  { "rule_id": "R-002", "control_id": "C-002", "mapping_rationale": "FTP may be an unnecessary service that should be disabled or restricted.", "verification_status": "verified" },
+  { "rule_id": "R-002", "control_id": "C-004", "mapping_rationale": "FTP commonly sends data without encryption.", "verification_status": "needs_manual_review" },
+  { "rule_id": "R-002", "control_id": "C-007", "mapping_rationale": "May be relevant to personal-data security measures if personal data is processed on this system; cannot be concluded from a scan alone.", "verification_status": "needs_manual_review" },
+  { "rule_id": "R-003", "control_id": "C-004", "mapping_rationale": "HTTP does not protect data in transit.", "verification_status": "needs_manual_review" },
+  { "rule_id": "R-003", "control_id": "C-007", "mapping_rationale": "May be relevant to personal-data security measures if personal data is processed on this system; cannot be concluded from a scan alone.", "verification_status": "needs_manual_review" },
+  { "rule_id": "R-004", "control_id": "C-002", "mapping_rationale": "File-sharing services should be limited to what is required.", "verification_status": "verified" },
+  { "rule_id": "R-004", "control_id": "C-003", "mapping_rationale": "SMB reachable across a boundary relates to boundary protection.", "verification_status": "verified" },
+  { "rule_id": "R-005", "control_id": "C-001", "mapping_rationale": "RDP is a remote-access service that should be managed and restricted.", "verification_status": "verified" },
+  { "rule_id": "R-005", "control_id": "C-003", "mapping_rationale": "RDP reachable across a boundary relates to boundary protection.", "verification_status": "verified" },
+  { "rule_id": "R-006", "control_id": "C-001", "mapping_rationale": "SSH is a remote-access service whose use should be authorized.", "verification_status": "verified" },
+  { "rule_id": "R-007", "control_id": "C-003", "mapping_rationale": "Database ports should not be reachable across unintended boundaries.", "verification_status": "verified" },
+  { "rule_id": "R-007", "control_id": "C-002", "mapping_rationale": "Only required services should be exposed.", "verification_status": "verified" },
+  { "rule_id": "R-007", "control_id": "C-007", "mapping_rationale": "May be relevant to personal-data security measures if personal data is processed on this system; cannot be concluded from a scan alone.", "verification_status": "needs_manual_review" },
+  { "rule_id": "R-008", "control_id": "C-001", "mapping_rationale": "Legacy r-services are weak remote-access mechanisms.", "verification_status": "verified" },
+  { "rule_id": "R-008", "control_id": "C-004", "mapping_rationale": "Legacy r-services lack strong protection of data in transit.", "verification_status": "needs_manual_review" },
+  { "rule_id": "R-008", "control_id": "C-007", "mapping_rationale": "May be relevant to personal-data security measures if personal data is processed on this system; cannot be concluded from a scan alone.", "verification_status": "needs_manual_review" },
+  { "rule_id": "R-009", "control_id": "C-002", "mapping_rationale": "Unexpected service placement may indicate a service that is not intended.", "verification_status": "needs_manual_review" }
+]
