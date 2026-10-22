@@ -26,6 +26,7 @@ Node.js + Express API that validates scan requests, runs the Nmap scanner, and s
    cp db.example.js db.js
 ```
    Then edit `db.js` and replace `yourpassword` with the password from step 2.
+
 4. Start the API:
 ```bash
    node index.js
