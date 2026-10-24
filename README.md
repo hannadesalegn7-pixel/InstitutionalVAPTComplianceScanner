@@ -20,8 +20,8 @@ A web application designed to help Ethiopian institutions identify potential sec
 
 ## Team Responsibilities
 - Member 1: Vulnerability Scanner (Python + Nmap)
-- Member 2: Backend API (FastAPI)
-- Member 3: Frontend Dashboard (React + Tailwind CSS)
+- Member 2: Backend API
+- Member 3: Frontend Dashboard
 - Member 4: Risk Assessment, Compliance & Reporting
 
 ## Development Status
