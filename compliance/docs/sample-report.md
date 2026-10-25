@@ -1,7 +1,7 @@
 # Security Assessment Report
 
 - Target: 192.168.1.10
-- Generated: 2026-10-22 08:36 UTC
+- Generated: 2026-10-25 11:53 UTC
 - Overall risk (highest severity observed): high
 - Risk score: 6
 - Total findings: 5 (2 need manual review)
@@ -24,7 +24,7 @@
 - Recommendation: Disable Telnet and use SSH with key-based authentication.
 - Related controls:
   - NIST SP 800-53 Rev 5 AC-17 (Remote Access) - mapping: verified; reference verified: True. Rationale: Telnet is a remote-access protocol; remote access should be controlled and protected.
-  - NIST SP 800-53 Rev 5 SC-8 (Transmission Confidentiality and Integrity) - mapping: needs_manual_review; reference verified: False. Rationale: Telnet does not protect data in transit.
+  - NIST SP 800-53 Rev 5 SC-8 (Transmission Confidentiality and Integrity) - mapping: needs_manual_review; reference verified: True. Rationale: Telnet does not protect data in transit.
   - Ethiopia - Personal Data Protection Proclamation No. 1321/2024 Security measures provisions (exact article to be confirmed) (Technical and organisational measures for personal data security) - mapping: needs_manual_review; reference verified: False. Rationale: May be relevant to personal-data security measures if personal data is processed on this system; cannot be concluded from a scan alone.
 
 ### finding-004: HTTP service without observed HTTPS
@@ -33,7 +33,7 @@
 - Evidence: http observed on port 80/tcp
 - Recommendation: Verify whether HTTP is required; redirect to HTTPS where possible.
 - Related controls:
-  - NIST SP 800-53 Rev 5 SC-8 (Transmission Confidentiality and Integrity) - mapping: needs_manual_review; reference verified: False. Rationale: HTTP does not protect data in transit.
+  - NIST SP 800-53 Rev 5 SC-8 (Transmission Confidentiality and Integrity) - mapping: needs_manual_review; reference verified: True. Rationale: HTTP does not protect data in transit.
   - Ethiopia - Personal Data Protection Proclamation No. 1321/2024 Security measures provisions (exact article to be confirmed) (Technical and organisational measures for personal data security) - mapping: needs_manual_review; reference verified: False. Rationale: May be relevant to personal-data security measures if personal data is processed on this system; cannot be concluded from a scan alone.
 
 ### finding-001: SSH service detected

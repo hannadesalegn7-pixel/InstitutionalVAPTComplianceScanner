@@ -1,17 +1,12 @@
-# compliance/ (Member 4)
+# compliance/ (Member 4: Compliance and Findings)
 
-Risk assessment, compliance mapping and reporting.
-
-- `rules/rules.json` - security rules (severity, evidence, recommendation)
-- `controls/controls.json` - control references (NIST, CIS, Ethiopian law)
+- `rules/rules.json` - security rules (ID, criteria, severity, evidence, what it cannot prove, recommendation)
+- `controls/controls.json` - control references with source and verification status
 - `mappings/mappings.json` - which rule relates to which control, and why
-- `rules_engine.py` - `evaluate(target, observations)` returns findings
-- `report.py` - `summarize(findings)` and `generate_markdown(target, findings)`
+- `map_findings.py` - reads findings JSON on stdin, prints the same findings with `compliance_references` filled in
+- `rules_engine.py` - `evaluate()` (observations -> findings) and `map_findings()` (findings -> findings + references)
+- `docs/` - severity criteria, rule catalogue, mapping interface, reference verification log, limitations
+- `report.py`, `make_report.py` - optional risk summary and Markdown report (extra, not required by the plan)
 - `tests/test_engine.py` - run: `python3 compliance/tests/test_engine.py`
 
-FastAPI usage:
-
-    from compliance.rules_engine import evaluate
-    from compliance.report import summarize, generate_markdown
-
-Observations format: list of dicts with keys port, protocol, state, service, version.
+Backend usage: see `docs/mapping-interface.md`.

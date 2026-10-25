@@ -64,7 +64,7 @@ def generate_markdown(target, findings):
                     f"  - {r['framework']} {r['reference']} ({r['title']}) - "
                     f"mapping: {r['verification_status']}; "
                     f"reference verified: {r['source_verified']}. "
-                    f"Rationale: {r['mapping_rationale']}"
+                    f"Rationale: {r['rationale']}"
                 )
         lines.append("")
 
