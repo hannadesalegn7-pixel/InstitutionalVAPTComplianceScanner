@@ -1,0 +1,58 @@
+[
+  {
+    "finding_id": "finding-001",
+    "title": "Telnet service detected",
+    "target": "192.168.1.10",
+    "port": 23,
+    "protocol": "tcp",
+    "service": "telnet",
+    "version": null,
+    "severity": "high",
+    "evidence": "telnet observed on port 23/tcp",
+    "confidence": "observed",
+    "recommendation": "Disable Telnet and use SSH.",
+    "compliance_references": []
+  },
+  {
+    "finding_id": "finding-002",
+    "title": "HTTP service detected",
+    "target": "192.168.1.10",
+    "port": 80,
+    "protocol": "tcp",
+    "service": "http",
+    "version": "Apache httpd 2.4.58",
+    "severity": "informational",
+    "evidence": "HTTP service observed on port 80",
+    "confidence": "observed",
+    "recommendation": "Verify whether unencrypted HTTP is required",
+    "compliance_references": []
+  },
+  {
+    "finding_id": "finding-003",
+    "title": "Service on non-standard port",
+    "target": "192.168.1.10",
+    "port": 8888,
+    "protocol": "tcp",
+    "service": "http",
+    "version": null,
+    "severity": "informational",
+    "evidence": "http observed on port 8888/tcp",
+    "confidence": "observed",
+    "recommendation": "Confirm the service is intended.",
+    "compliance_references": []
+  },
+  {
+    "finding_id": "finding-004",
+    "title": "Host-level note",
+    "target": "192.168.1.10",
+    "port": null,
+    "protocol": null,
+    "service": null,
+    "version": null,
+    "severity": "informational",
+    "evidence": "Host responded to scan",
+    "confidence": "observed",
+    "recommendation": "None",
+    "compliance_references": []
+  }
+]

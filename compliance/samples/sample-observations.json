@@ -1,0 +1,6 @@
+[
+  { "port": 22, "protocol": "tcp", "state": "open", "service": "ssh", "version": "OpenSSH 8.9" },
+  { "port": 23, "protocol": "tcp", "state": "open", "service": "telnet" },
+  { "port": 80, "protocol": "tcp", "state": "open", "service": "http" },
+  { "port": 8888, "protocol": "tcp", "state": "open", "service": "http" }
+]

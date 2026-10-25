@@ -1,0 +1,65 @@
+[
+  {
+    "control_id": "C-001",
+    "framework": "NIST SP 800-53 Rev 5",
+    "reference": "AC-17",
+    "title": "Remote Access",
+    "source_url": "https://csrc.nist.gov/publications/detail/sp/800-53/rev-5/final",
+    "source_verified": true,
+    "verification_note": "Control ID and title confirmed in public NIST SP 800-53 Rev 5 catalogue listings on 2026-10-25. Copy the exact control text from the official publication if it is ever quoted."
+  },
+  {
+    "control_id": "C-002",
+    "framework": "NIST SP 800-53 Rev 5",
+    "reference": "CM-7",
+    "title": "Least Functionality",
+    "source_url": "https://csrc.nist.gov/publications/detail/sp/800-53/rev-5/final",
+    "source_verified": true,
+    "verification_note": "Control ID and title confirmed in public NIST SP 800-53 Rev 5 catalogue listings on 2026-10-25. Copy the exact control text from the official publication if it is ever quoted."
+  },
+  {
+    "control_id": "C-003",
+    "framework": "NIST SP 800-53 Rev 5",
+    "reference": "SC-7",
+    "title": "Boundary Protection",
+    "source_url": "https://www.nccoe.nist.gov/publication/1800-19/VolB/vol-b-appendix.html",
+    "source_verified": true,
+    "verification_note": "NIST NCCoE appendix lists SC-7 as Boundary Protection (confirmed 2026-10-25). Official publication: https://csrc.nist.gov/publications/detail/sp/800-53/rev-5/final"
+  },
+  {
+    "control_id": "C-004",
+    "framework": "NIST SP 800-53 Rev 5",
+    "reference": "SC-8",
+    "title": "Transmission Confidentiality and Integrity",
+    "source_url": "https://www.nccoe.nist.gov/publication/1800-19/VolB/vol-b-appendix.html",
+    "source_verified": true,
+    "verification_note": "NIST NCCoE appendix lists SC-8 as Transmission Confidentiality and Integrity (confirmed 2026-10-25). Official publication: https://csrc.nist.gov/publications/detail/sp/800-53/rev-5/final"
+  },
+  {
+    "control_id": "C-005",
+    "framework": "CIS Controls v8",
+    "reference": "4.8",
+    "title": "Uninstall or Disable Unnecessary Services on Enterprise Assets and Software",
+    "source_url": "https://controls-assessment-specification.readthedocs.io/en/latest/control-4/control-4.8.html",
+    "source_verified": true,
+    "verification_note": "Safeguard number and title confirmed in the CIS Controls Assessment Specification on 2026-10-25. Official CIS page: https://www.cisecurity.org/controls/v8"
+  },
+  {
+    "control_id": "C-006",
+    "framework": "CIS Controls v8",
+    "reference": "3.10",
+    "title": "Encrypt Sensitive Data in Transit",
+    "source_url": "https://controls-assessment-specification.readthedocs.io/en/latest/control-3/control-3.10.html",
+    "source_verified": true,
+    "verification_note": "Safeguard number and title confirmed in the CIS Controls Assessment Specification on 2026-10-25. Official CIS page: https://www.cisecurity.org/controls/v8"
+  },
+  {
+    "control_id": "C-007",
+    "framework": "Ethiopia - Personal Data Protection Proclamation No. 1321/2024",
+    "reference": "Security measures provisions (exact article to be confirmed)",
+    "title": "Technical and organisational measures for personal data security",
+    "source_url": "",
+    "source_verified": false,
+    "verification_note": "Proclamation name and number found in public sources. The exact article on security measures is NOT yet confirmed from the official Federal Negarit Gazette text. Keep every mapping to this control as needs_manual_review."
+  }
+]
