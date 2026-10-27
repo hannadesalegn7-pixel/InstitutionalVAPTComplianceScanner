@@ -3,6 +3,7 @@ const cors = require("cors");
 const rateLimit = require("express-rate-limit");
 const { runScan } = require("./scanner");
 const { validateTarget } = require("./validation");
+const { mapCompliance } = require("./mapper");
 const pool = require("./db");
 
 const app = express();
@@ -101,7 +102,8 @@ app.post("/api/scans", scanLimiter, (req, res) => {
     }
   }, SCAN_TIMEOUT_MS);
 
-  runScan(target)
+    runScan(target)
+    .then((findings) => mapCompliance(findings))
     .then((findings) => {
       if (scans[scan_id].status === "running") {
         clearTimeout(timer);
