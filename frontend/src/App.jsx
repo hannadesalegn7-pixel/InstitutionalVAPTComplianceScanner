@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import './App.css';
 
-const API_BASE_URL = 'http://10.42.0.252:3000';
+const API_BASE_URL = 'http://' + window.location.hostname + ':3000';
 const API_KEY = 'demo-key-123';
 
 function App() {
