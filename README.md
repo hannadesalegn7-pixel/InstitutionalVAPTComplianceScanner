@@ -19,10 +19,10 @@ A web application designed to help Ethiopian institutions identify potential sec
 - Preliminary mapping to verified Ethiopian cybersecurity requirements
 
 ## Team Responsibilities
-- Member 1: Vulnerability Scanner (Python + Nmap)
-- Member 2: Backend API
-- Member 3: Frontend Dashboard
-- Member 4: Risk Assessment, Compliance & Reporting
+- Hana Desalegn (CTC-1590-26): Vulnerability Scanner (Python + Nmap)
+- Firomsa Abduljaber (CTC-1032-26): Backend API
+-Ntsuh Anteneh  (CTC-7111-26) : Frontend Dashboard
+- Nardos Addisu  (CTC-2054-26): Risk Assessment, Compliance & Reporting
 
 ## Development Status
 Initial development.
